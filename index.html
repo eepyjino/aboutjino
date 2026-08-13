@@ -1,215 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>hello! im Jino</title>
-
-<!-- Fallback handwritten font (swap out in style.css if you have your own font) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jino | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ================================
-     BACKGROUND GRID
-     (This is just the page background, generated with CSS.
-      No markup needed — see style.css)
-     ================================ -->
+    <main class="portfolio-card">
 
-<!-- ================================
-     MAIN CARD
-     ================================ -->
-<div class="card">
+        <div class="top-bar"></div>
 
-    <!-- Gray browser-style header bar -->
-    <div class="card-header"></div>
+        <div class="content">
 
-    <!-- White content area -->
-    <div class="card-content">
+            <section class="intro">
 
-        <!-- ================================
-             PROFILE / INTRO
-             ================================ -->
-        <div class="profile">
+                <div class="profile">
 
-            <!--
-                FACE SVG PLACEHOLDER
-                Replace this element with my own SVG.
-                Do not modify the surrounding positioning unless necessary.
-            -->
-            <div class="face-placeholder">
-                <img src="assets/images/face.svg" alt="Jino">
-                <!-- IMPORT MY FACE SVG HERE -->
-            </div>
+                    <svg
+                        viewBox="0 0 220 180"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                    >
 
-            <div class="intro-text">
-                <h1 class="main-title">hello! im Jino</h1>
-                <p class="subtitle">regular guy</p>
-            </div>
+                        <path
+                            d="M42 91
+                               C42 48 72 19 111 18
+                               C155 17 184 43 188 83
+                               C193 128 168 158 116 160
+                               C67 161 42 137 42 91Z"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
 
-        </div>
+                        <path
+                            d="M72 29
+                               C70 49 68 67 60 82"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
 
-        <!-- ================================
-             NAVIGATION (About / Work)
-             Both icons are popup triggers now —
-             clicking either opens its own draggable window.
-             The data-popup value matches a popup window's id below.
-             ================================ -->
-        <div class="navigation">
+                        <path
+                            d="M105 24
+                               C104 46 105 61 104 75"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
 
-            <div class="nav-item popup-trigger" data-popup="aboutPopup">
-                <!--
-                    ABOUT ICON PLACEHOLDER
-                    Replace with my own SVG.
-                -->
-                <div class="about-icon-placeholder">
-                    <!-- Built-in "about" icon (speech bubble + i).
-                         Change its color via the fill on .icon-about path/circle/rect in style.css.
-                         Want your own SVG instead? Just replace this whole <svg>...</svg>
-                         with <img src="about.svg" alt="About">. -->
-                    <svg class="icon-about" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20,18 H72 A12,12 0 0 1 84,30 V62 A12,12 0 0 1 72,74 H44 L26,90 V74 H20 A12,12 0 0 1 8,62 V30 A12,12 0 0 1 20,18 Z"/>
-                        <circle class="icon-about-dot" cx="46" cy="38" r="5.5"/>
-                        <rect class="icon-about-dot" x="40.5" y="48" width="11" height="24" rx="5.5"/>
+                        <path
+                            d="M137 27
+                               C139 43 138 58 138 72"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M45 82
+                               C65 72 85 76 94 94
+                               C102 111 94 132 75 138
+                               C57 143 43 132 42 116"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M183 82
+                               C165 73 146 76 137 94
+                               C129 111 136 131 154 138
+                               C171 143 186 132 188 116"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M57 101
+                               C68 96 79 96 89 101"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M146 101
+                               C157 96 169 96 179 101"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M101 101
+                               L101 115
+                               L108 118"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+
+                        <path
+                            d="M97 101
+                               L113 101"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M91 133
+                               C101 142 116 142 127 133"
+                            stroke="#24BFC3"
+                            stroke-width="6"
+                            stroke-linecap="round"
+                        />
+
+                        <path
+                            d="M102 134
+                               C107 129 114 129 119 134"
+                            stroke="#24BFC3"
+                            stroke-width="5"
+                            stroke-linecap="round"
+                        />
+
+                        <circle
+                            cx="109"
+                            cy="117"
+                            r="3"
+                            fill="#24BFC3"
+                        />
+
                     </svg>
-                </div>
-                <span class="nav-label">about</span>
-            </div>
 
-            <div class="nav-item popup-trigger" data-popup="workPopup">
-                <!--
-                    WORK ICON PLACEHOLDER
-                    Replace with my own SVG.
-                -->
-                <div class="work-icon-placeholder">
-                    <!-- Built-in "work" icon (folder).
-                         Change its color via the fill on .icon-work path in style.css.
-                         Want your own SVG instead? Just replace this whole <svg>...</svg>
-                         with <img src="work.svg" alt="Work">. -->
-                    <svg class="icon-work" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10,30 A8,8 0 0 1 18,22 H38 L48,32 H82 A8,8 0 0 1 90,40 V72 A8,8 0 0 1 82,80 H18 A8,8 0 0 1 10,72 Z"/>
-                    </svg>
                 </div>
-                <span class="nav-label">work</span>
-            </div>
+
+                <div class="intro-text">
+
+                    <h1>hello! im Jino</h1>
+
+                    <p>regular guy</p>
+
+                </div>
+
+            </section>
+
+            <nav class="navigation">
+
+                <a
+                    href="about.html"
+                    class="nav-button"
+                >
+
+                    <div class="nav-icon"></div>
+
+                    <span>about</span>
+
+                </a>
+
+                <a
+                    href="work.html"
+                    class="nav-button"
+                >
+
+                    <div class="nav-icon"></div>
+
+                    <span>work</span>
+
+                </a>
+
+            </nav>
+
+            <section class="contact">
+
+                <h2>contact me:</h2>
+
+                <div class="social-links">
+
+                    <a
+                        href="https://instagram.com/"
+                        target="_blank"
+                        class="social instagram"
+                    ></a>
+
+                    <a
+                        href="https://facebook.com/"
+                        target="_blank"
+                        class="social facebook"
+                    ></a>
+
+                    <a
+                        href="mailto:youremail@gmail.com"
+                        class="social email"
+                    ></a>
+
+                </div>
+
+            </section>
 
         </div>
 
-        <!-- ================================
-             CONTACT
-             ================================ -->
-        <div class="contact">
-            <p class="contact-title">contact me:</p>
+    </main>
 
-            <div class="contact-icons">
-
-                <!--
-                    CONTACT ICON PLACEHOLDER 1 (e.g. info)
-                -->
-                <div class="contact-icon-placeholder contact-icon-1">
-                    <img src="assets/images/info-icon.svg" alt="instagram">
-                    <!-- IMPORT CONTACT ICON 1 SVG HERE -->
-                </div>
-
-                <!--
-                    CONTACT ICON PLACEHOLDER 2 (e.g. Facebook)
-                -->
-                <div class="contact-icon-placeholder contact-icon-2">
-                    <a href="https://www.facebook.com/profile.php?id=61591463904727" target="_blank">
-                    <img src="assets/images/fb-icon.svg" alt="facebook">
-                    </a>
-                    <!-- IMPORT FACEBOOK SVG HERE -->
-                </div>
-
-                <!--
-                    CONTACT ICON PLACEHOLDER 3 (e.g. Email)
-                -->
-                <div class="contact-icon-placeholder contact-icon-3">]
-                    <a href="mailto:eepyjino@gmail.com">
-                    <img src="assets/images/mail-icon.svg" alt="email">
-                    </a>
-                    <!-- IMPORT EMAIL SVG HERE -->
-                </div>
-
-            </div>
-        </div>
-
-    </div><!-- /.card-content -->
-
-</div><!-- /.card -->
-
-
-<!-- ================================
-     ABOUT POPUP WINDOW
-     Hidden by default. Opens when the
-     "about" nav item is clicked.
-     Drag it around by its title bar.
-     ================================ -->
-<div class="popup-window" id="aboutPopup">
-
-    <!-- Title bar — this is the drag handle -->
-    <div class="popup-header">
-        <span class="popup-title">about</span>
-        <button class="popup-close" aria-label="Close">[x]</button>
-    </div>
-
-    <div class="popup-content">
-        <p>regular guy, what did you expect?</p>
-    </div>
-</div>
-
-
-<!-- ================================
-     WORK POPUP WINDOW
-     Hidden by default. Opens when the
-     "work" nav item is clicked.
-     Drag it around by its title bar.
-     ================================ -->
-<div class="popup-window" id="workPopup">
-
-    <!-- Title bar — this is the drag handle -->
-    <div class="popup-header">
-        <span class="popup-title">work</span>
-        <button class="popup-close" aria-label="Close">[x]</button>
-    </div>
-
-    <div class="popup-content">
-        <p>unemployed</p>
-    </div>
-</div>
-
-
-<script src="script.js"></script>
 </body>
+
 </html>
-
-<!--
-====================================================
-HOW TO IMPORT MY SVG
-
-The About and Work icons are now built directly into
-this file as inline <svg> elements (see .icon-about /
-.icon-work in style.css to recolor them). To use your
-own file instead, replace the whole <svg>...</svg>
-block with:
-
-<img src="about.svg" alt="About">
-<img src="work.svg" alt="Work">
-
-Replace the face placeholder with:
-
-<img src="face.svg" alt="Face">
-
-Replace the Facebook icon with:
-
-<img src="facebook.svg" alt="Facebook">
-
-Replace the Email icon with:
-
-<img src="email.svg" alt="Email">
-====================================================
--->
