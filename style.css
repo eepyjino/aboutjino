@@ -1,553 +1,366 @@
-/* ==========================================
-   QUICK ADJUSTMENT GUIDE
-   ==========================================
-
-   Card position:      .card { margin: ... }  (currently centered, near top)
-   Card width:          .card { width: ... }   (currently 92vw, max-width 1300px)
-   Card height:         .card-content { min-height: ... }
-
-   Face position:       .face-placeholder { margin-right, margin-top }
-   Face size:            .face-placeholder { width / height }
-
-   Main title position: .intro-text { margin-top }
-   Main title size:      .main-title { font-size }
-
-   Subtitle position:   .subtitle { margin-top }
-
-   About position:      .navigation { left / bottom via absolute positioning }
-   Work position:        .nav-item + .nav-item { margin-left }
-   Nav/contact icon box size: .about-icon-placeholder, .work-icon-placeholder,
-                               .contact-icon-placeholder { width / height }
-   Icon hover effect:    .nav-item:hover / .contact-icon-placeholder:hover rules
-
-   Contact position:    .contact { right / bottom via absolute positioning }
-   Contact icons position: .contact-icons { gap }
-
-   Popup size:           .popup-window { width }
-   Popup starting position: #aboutPopup { top / left }, #workPopup { top / left }
-   Popup header color:   .popup-header { background-color }
-
-   ========================================== */
-
-
-/* ================================
-   BACKGROUND / GRID
-   ================================ */
-
-:root {
-    /* Change the background color of the page here */
-    --bg-color: #f7f4ec;
-
-    /* Change the grid line color here (subtle gray/beige) */
-    --grid-line-color: rgba(120, 110, 90, 0.12);
-
-    /* Change the grid cell size here (bigger number = bigger squares) */
-    --grid-size: 34px;
-}
-
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-}
-
 body {
-    background-color: var(--bg-color);
-    /* Two linear-gradients create the vertical + horizontal grid lines */
-    background-image:
-        linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
-    background-size: var(--grid-size) var(--grid-size);
-    /* Change website font here */
-    font-family: 'Caveat', 'Segoe Script', cursive, sans-serif;
-
     min-height: 100vh;
+
+    background-color: #f4f1e8;
+
+    background-image:
+        linear-gradient(
+            rgba(80, 80, 80, 0.13) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(80, 80, 80, 0.13) 1px,
+            transparent 1px
+        );
+
+    background-size: 32px 32px;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
+    padding: 40px;
+
+    overflow-x: hidden;
+
+    font-family: Arial, sans-serif;
 }
 
+.portfolio-card {
+    position: relative;
 
-/* ================================
-   MAIN CARD / WINDOW
-   ================================ */
+    width: 720px;
 
-.card {
-    /* Change card width here */
-    width: 92vw;
-    max-width: 1300px;
+    min-height: 440px;
 
-    /* Change card border radius here */
-    border-radius: 10px;
+    background: #fffefa;
 
-    /* Change card border thickness/color here */
-    border: 2px solid #1a1a1a;
+    border: 2px solid #171717;
 
-    /* Subtle drop shadow like a floating window */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border-radius: 28px;
 
-    background-color: #ffffff;
+    box-shadow:
+        7px 7px 0 #171717;
+
     overflow: hidden;
-
-    position: relative;
-    z-index: 1;
 }
 
-/* ================================
-   CARD HEADER
-   ================================ */
+.top-bar {
+    height: 52px;
 
-.card-header {
-    /* Change header height here */
-    height: 62px;
+    background: #d9d9d4;
 
-    /* Change header background here */
-    background-color: #d3d3d3;
+    border-bottom: 2px solid #171717;
 
-    /* Divider line under the header (thin dark line) */
-    border-bottom: 2.5px solid #1a1a1a;
+    position: relative;
 }
 
-.card-content {
-    background-color: #ffffff;
+.top-bar::before {
+    content: "●  ●  ●";
+
+    position: absolute;
+
+    left: 18px;
+
+    top: 12px;
+
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    color: #444;
+}
+
+.content {
     position: relative;
 
-    /* Change overall card content height here */
-    min-height: 620px;
+    min-height: 388px;
 
-    padding: 0 64px;
+    padding: 45px 55px;
+}
 
-    /* Centers the face + heading block horizontally and vertically
-       within the space above the nav/contact row */
+.intro {
     display: flex;
-    flex-direction: column;
+
     align-items: center;
-    justify-content: center;
 
-    /* Reserves room at the bottom so centering doesn't overlap
-       the absolutely-positioned nav/contact row */
-    padding-bottom: 140px;
+    gap: 10px;
 }
-
-
-/* ================================
-   PROFILE / INTRO
-   ================================ */
 
 .profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
+    width: 180px;
 
-.face-placeholder {
-    /* Change face size here */
-    width: 240px;
-    height: 240px;
-
-    /* Change horizontal spacing between face and text here */
-    margin-right: 10px;
+    height: 100px;
 
     flex-shrink: 0;
-}
 
-.face-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-.intro-text {
     display: flex;
-    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
-.main-title {
-    /* Change main heading size here */
-    font-size: 108px;
+.profile svg {
+    width: 110px;
+
+    height: 100px;
+
+    display: block;
+
+    overflow: visible;
+
+    transform: translate(5px, 3px);
+}
+
+.intro-text h1 {
+    margin: 0;
+
+    font-family:
+        "Comic Sans MS",
+        "Trebuchet MS",
+        cursive;
+
+    font-size: 48px;
+
     font-weight: 700;
-    color: #1a1a1a;
+
     line-height: 1;
-    margin: 0;
 
-    /* Nudge the heading up/down relative to the face */
-    margin-top: 0;
+    color: #171717;
+
+    white-space: nowrap;
 }
 
-.subtitle {
-    /* Change subtitle size here */
-    font-size: 38px;
-    font-weight: 600;
-    color: #2ab7ba;
-    margin: 0;
+.intro-text p {
+    margin-top: 12px;
 
-    /* Controls vertical distance between heading and subtitle */
-    margin-top: 8px;
+    font-family:
+        "Comic Sans MS",
+        cursive;
 
-    /* Controls horizontal indent of subtitle relative to heading */
-    margin-left: 6px;
+    font-size: 27px;
+
+    color: #159bb2;
 }
-
-
-/* ================================
-   NAVIGATION (About / Work)
-   ================================ */
 
 .navigation {
     display: flex;
 
-    /* Controls horizontal position of the nav row */
-    position: absolute;
-    left: 48px;
+    gap: 45px;
 
-    /* Controls vertical position of the nav row (distance from bottom of card) */
-    bottom: 34px;
+    margin-top: 35px;
+
+    margin-left: 20px;
+
+    transform: translateY(-8px);
 }
 
-.nav-item {
+.nav-button {
+    color: #159bb2;
+
+    text-decoration: none;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
+    font-family:
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 25px;
+
+    transition: 0.2s ease;
 }
 
-/* Spacing between "about" and "work" */
-.nav-item + .nav-item {
-    margin-left: 64px;
+.nav-button:hover {
+    transform:
+        translateY(-4px)
+        rotate(-2deg);
 }
 
-/* Both nav items are popup triggers, so give them a pointer cursor */
-.popup-trigger {
-    cursor: pointer;
-}
+.nav-icon {
+    width: 52px;
 
-.about-icon-placeholder,
-.work-icon-placeholder {
-    /* Change nav icon box size here */
-    width: 72px;
-    height: 72px;
+    height: 52px;
 
-    padding: 0;
+    background: #171717;
 
-    /* Centers whatever icon you drop inside the box */
+    border-radius: 14px;
+
     display: flex;
-    align-items: center;
+
     justify-content: center;
 
-    /* Smooth hover feedback */
-    transition: transform 0.15s ease;
+    align-items: center;
+
+    margin-bottom: 7px;
+
+    overflow: hidden;
 }
 
-/* HOVER EFFECT — nav icons lift/scale slightly on hover.
-   Change the scale value or swap for a different effect
-   (e.g. opacity, a border, a drop-shadow) here. */
-.nav-item:hover .about-icon-placeholder,
-.nav-item:hover .work-icon-placeholder {
-    transform: scale(1.12);
-}
+.nav-icon svg {
+    width: 75%;
 
-.nav-item:hover .nav-label {
-    color: #1f8e90;
-}
+    height: 75%;
 
-/* This is the key to exact alignment: it forces every icon (however
-   it was drawn/exported) to scale to fill its box consistently,
-   instead of showing at its own native pixel size. Without this,
-   two SVGs with different internal canvas sizes will look mismatched
-   even inside identical boxes. */
-.about-icon-placeholder img,
-.about-icon-placeholder svg,
-.work-icon-placeholder img,
-.work-icon-placeholder svg {
-    /* Change how much of the box the icon fills here */
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
     display: block;
 }
-
-/* Built-in icon colors (the about/work SVGs are now written directly
-   into index.html instead of imported image files). Change these to
-   recolor them — .icon-about is the bubble outline, .icon-about-dot
-   is the "i" (dot + stem), .icon-work is the folder. */
-.icon-about,
-.icon-work {
-    width: 44px;
-    height: 44px;
-}
-
-.icon-about path {
-    fill: #1a1a1a;
-}
-
-.icon-about-dot {
-    fill: #ffffff;
-}
-
-.icon-work path {
-    fill: #1a1a1a;
-}
-
-.nav-label {
-    /* Change nav label size here */
-    font-size: 32px;
-    font-weight: 600;
-    color: #2ab7ba;
-
-    /* Controls spacing between icon and label */
-    margin-top: 6px;
-
-    transition: color 0.15s ease;
-}
-
-
-/* ================================
-   CONTACT
-   ================================ */
 
 .contact {
-    /* Controls horizontal position of the contact block */
     position: absolute;
-    right: 48px;
 
-    /* Controls vertical position of the contact block (distance from bottom of card) */
-    bottom: 34px;
+    right: 55px;
 
+    bottom: 32px;
+
+    text-align: center;
+}
+
+.contact h2 {
+    margin: 0 0 10px;
+
+    color: #159bb2;
+
+    font-family:
+        "Comic Sans MS",
+        cursive;
+
+    font-size: 25px;
+}
+
+.social-links {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    gap: 14px;
+
+    justify-content: center;
 }
 
-.contact-title {
-    /* Change "contact me:" text size here */
-    font-size: 34px;
-    font-weight: 600;
-    color: #2ab7ba;
-    margin: 0 0 10px 0;
-}
+.social {
+    width: 48px;
 
-.contact-icons {
-    display: flex;
+    height: 48px;
 
-    /* Controls spacing between the three contact icons */
-    gap: 18px;
-}
+    border: 2px solid #171717;
 
-.contact-icon-placeholder {
-    /* Change contact icon box size here */
-    width: 72px;
-    height: 72px;
     border-radius: 12px;
 
-    /* Centers whatever icon you drop inside the box */
     display: flex;
-    align-items: center;
+
     justify-content: center;
 
-    transition: transform 0.15s ease;
+    align-items: center;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+
+    box-shadow:
+        3px 3px 0 #171717;
+
+    overflow: hidden;
 }
 
-/* HOVER EFFECT for contact/social icons — same idea as the nav icons */
-.contact-icon-placeholder:hover {
-    transform: scale(1.12);
+.social:hover {
+    transform:
+        translate(2px, 2px);
+
+    box-shadow:
+        1px 1px 0 #171717;
 }
 
-/* Same fix as the nav icons: forces all three contact icons to scale
-   to fill their box consistently, regardless of native SVG size */
-.contact-icon-placeholder img,
-.contact-icon-placeholder svg {
-    max-width: 90%;
-    max-height: 90%;
-    width: auto;
-    height: auto;
+.social svg {
+    width: 70%;
+
+    height: 70%;
+
     display: block;
 }
 
-
-/* ================================
-   POPUP WINDOWS (About / Work)
-   Small draggable "app windows" that
-   open when their nav item is clicked.
-   Hidden until then.
-   ================================ */
-
-.popup-window {
-    /* Hidden by default — script.js toggles this to "block" */
-    display: none;
-
-    /* Floats above everything, independent of page scroll */
-    position: fixed;
-
-    /* Change popup width here */
-    width: 520px;
-
-    background-color: #ffffff;
-    border: 2px solid #1a1a1a;
-    border-radius: 10px;
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
-    overflow: hidden;
-
-    z-index: 100;
+.instagram {
+    background: #ef6875;
 }
 
-/* Starting position for each popup (before the user drags it).
-   Offset slightly so About and Work don't open exactly on top
-   of one another. */
-#aboutPopup {
-    top: 10vh;
-    left: calc(50% - 380px);
+.facebook {
+    background: #66b5df;
 }
 
-#workPopup {
-    top: 16vh;
-    left: calc(50% + 20px);
+.email {
+    background: #e5d75b;
 }
 
-.popup-header {
-    /* Change popup title bar height/color here */
-    height: 54px;
-    background-color: #3a3a3a;
+@media (max-width: 700px) {
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-
-    /* Grabbable drag handle */
-    cursor: grab;
-    user-select: none;
-}
-
-.popup-header:active {
-    cursor: grabbing;
-}
-
-.popup-title {
-    font-family: 'Courier New', monospace;
-    font-size: 19px;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-.popup-close {
-    font-family: 'Courier New', monospace;
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 4px;
-}
-
-.popup-close:hover {
-    color: #ff8a8a;
-}
-
-.popup-content {
-    padding: 40px 32px;
-    font-family: 'Courier New', monospace;
-    font-size: 20px;
-    color: #1a1a1a;
-    line-height: 1.6;
-}
-
-
-/* ================================
-   RESPONSIVE DESIGN
-   ================================ */
-
-@media (max-width: 800px) {
-    .card {
-        width: 94vw;
+    body {
+        padding: 25px;
     }
 
-    .card-content {
-        padding: 0 24px;
-        padding-bottom: 24px;
+    .portfolio-card {
+        width: 100%;
+
+        min-height: 500px;
+    }
+
+    .content {
+        padding: 35px 25px;
+    }
+
+    .intro {
+        gap: 5px;
     }
 
     .profile {
-        margin-top: 0;
+        width: 130px;
+
+        height: 90px;
     }
 
-    .face-placeholder {
-        width: 120px;
-        height: 120px;
-        margin-right: 20px;
+    .profile svg {
+        width: 90px;
+
+        height: 80px;
+
+        transform: translate(3px, 2px);
     }
 
-    .main-title {
-        font-size: 42px;
+    .intro-text h1 {
+        font-size: 34px;
     }
 
-    .subtitle {
-        font-size: 20px;
-    }
-
-    .about-icon-placeholder,
-    .work-icon-placeholder,
-    .contact-icon-placeholder {
-        width: 52px;
-        height: 52px;
-    }
-
-    .icon-about,
-    .icon-work {
-        width: 32px;
-        height: 32px;
-    }
-
-    .navigation,
-    .contact {
-        position: static;
-        margin-top: 28px;
-    }
-
-    .card-content {
-        justify-content: flex-start;
-        padding-bottom: 28px;
-        min-height: 0;
+    .intro-text p {
+        font-size: 21px;
     }
 
     .navigation {
-        left: auto;
+        margin-left: 0;
+
+        margin-top: 35px;
+
+        transform: translateY(-5px);
     }
 
     .contact {
-        right: auto;
-        align-items: flex-start;
+        position: static;
+
+        margin-top: 45px;
+
+        text-align: left;
     }
 
-    .popup-window {
-        width: 90vw;
-    }
-
-    #aboutPopup {
-        left: 5vw;
-        top: 10vh;
-    }
-
-    #workPopup {
-        left: 5vw;
-        top: 14vh;
-    }
-}
-
-@media (max-width: 480px) {
-    .profile {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .face-placeholder {
-        margin-right: 0;
-        margin-bottom: 16px;
+    .social-links {
+        justify-content: flex-start;
     }
 }
