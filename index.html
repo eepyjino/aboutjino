@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hello! im Jino</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+    <div class="card-header"></div>
+
+    <div class="card-content">
+
+        <div class="profile">
+
+            <div class="face-placeholder">
+                <img src="assets/images/face.svg" alt="Jino">
+            </div>
+
+            <div class="intro-text">
+                <h1 class="main-title">hello! <span class="main-title-accent">im Jino</span></h1>
+                <p class="subtitle">regular guy</p>
+            </div>
+
+        </div>
+
+        <div class="navigation">
+
+            <div class="nav-item popup-trigger" data-popup="aboutPopup">
+                <div class="about-icon-placeholder">
+                    <img src="assets/images/help-about-svgrepo-com.svg" alt="About">
+                </div>
+                <span class="nav-label">about</span>
+            </div>
+
+            <div class="nav-item popup-trigger" data-popup="workPopup">
+                <div class="work-icon-placeholder">
+                    <img src="assets/images/work-svgrepo-com.svg" alt="Work">
+                </div>
+                <span class="nav-label">work</span>
+            </div>
+
+        </div>
+
+        <div class="contact">
+            <p class="contact-title">contact me:</p>
+
+            <div class="contact-icons">
+
+                <div class="contact-icon-placeholder contact-icon-1">
+                    <a href="https://discord.gg/uGg5X984e" target="_blank">
+                        <img src="assets/images/discord-svgrepo-com.svg" alt="Discord">
+                    </a>
+                </div>
+
+                <div class="contact-icon-placeholder contact-icon-2">
+                    <a href="https://www.facebook.com/profile.php?id=61591463904727" target="_blank">
+                        <img src="assets/images/facebook-svgrepo-com.svg" alt="facebook">
+                    </a>
+                </div>
+
+                <div class="contact-icon-placeholder contact-icon-3">
+                    <a href="mailto:eepyjino@gmail.com">
+                        <img src="assets/images/mail-pencil-svgrepo-com.svg" alt="email">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="popup-window" id="aboutPopup">
+
+    <div class="popup-header">
+        <span class="popup-title">about</span>
+        <button class="popup-close" aria-label="Close">[x]</button>
+    </div>
+
+    <div class="popup-content">
+        <div class="popup-profile">
+            <img src="assets/images/face.svg" alt="Jino" class="popup-profile-pic">
+            <div class="popup-profile-info">
+                <h2 class="popup-name">Jino</h2>
+                <p class="popup-description">the regular guy</p>
+            </div>
+        </div>
+
+        <p class="popup-intro">Hi! I'm Jino, a regular guy who loves videogames and anime...</p>
+
+        <ul class="popup-list">
+            <li>2nd year BSIT student</li>
+            <li>20 yrs old</li>
+            <li>loves videogames</li>
+            <li>love u shiela</li>
+        </ul>
+    </div>
+</div>
+
+<div class="popup-window" id="workPopup">
+
+    <div class="popup-header">
+        <span class="popup-title">work</span>
+        <button class="popup-close" aria-label="Close">[x]</button>
+    </div>
+
+    <div class="popup-content">
+        <p class="popup-intro">Past job experience:</p>
+
+        <ul class="popup-list">
+            <li>Worked as a cook at KASIKAS CAFE, dumaguete</li>
+        </ul>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
