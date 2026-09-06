@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="58" height="56" viewBox="0 0 58 56">
-  <title>Information Bubble Icon</title>
-  <path fill="#000000"
-    d="M48.2 16.2C44.1 10.3 37.4 7 29 7C15.6 7 5 15.8 5 27.2C5 33 7.8 38.3 12 41.9L7 50L20 45.1C22.8 45.9 25.8 46.3 29 46.3C41.7 46.3 51 38.2 51 27.2C51 23.2 50 19.5 48.2 16.2Z"/>
-  <circle cx="28.5" cy="18" r="3.5" fill="#FFFFFF"/>
-  <rect x="26.25" y="24" width="4.5" height="15" rx="2.25" fill="#FFFFFF"/>
-</svg>
